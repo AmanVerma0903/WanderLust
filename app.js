@@ -102,21 +102,18 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser()); //user se realted all info store
 passport.deserializeUser(User.deserializeUser());//user se realted all info remove
 
-// Make currUser available in all EJS templates
+// Consolidated middleware for all res.locals
 app.use((req, res, next) => {
   res.locals.currUser = req.user;
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
   next();
 });
 
-
-app.use((req,res,next)=>{
-  console.log("Current logged in user:", req.user);
-  res.locals.success = req.flash("success");
-   res.locals.error = req.flash("error");
-   res.locals.currUser = req.user;
-   next();
+// Redirect root to /listings
+app.get("/", (req, res) => {
+  res.redirect("/listings");
 });
-
 
 
 // app.get("/demouser",async(req,res)=>{
