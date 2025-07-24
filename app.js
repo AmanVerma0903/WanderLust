@@ -1,4 +1,3 @@
-
 if(process.env.NODE_ENV!="production"){
 require('dotenv').config();//reuire env file which  is used to store credentials
 }
@@ -104,6 +103,7 @@ passport.deserializeUser(User.deserializeUser());//user se realted all info remo
 
 // Consolidated middleware for all res.locals
 app.use((req, res, next) => {
+  console.log("currUser middleware running, req.user:", req.user);
   res.locals.currUser = req.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
