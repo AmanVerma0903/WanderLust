@@ -102,6 +102,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser()); //user se realted all info store
 passport.deserializeUser(User.deserializeUser());//user se realted all info remove
 
+// Make currUser available in all EJS templates
+app.use((req, res, next) => {
+  res.locals.currUser = req.user;
+  next();
+});
 
 
 app.use((req,res,next)=>{
