@@ -22,5 +22,5 @@ router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedir
 
 
 router.get("/logout",userController.logout);
-console.log("userController:", userController);
+
 module.exports = router;

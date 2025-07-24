@@ -15,6 +15,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
+const port = process.env.PORT || 8080;       
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
@@ -71,7 +72,7 @@ const store = MongoStore.create({
   touchAfter:24 * 3600, //kitne seconds ke baad session update hoga 
 });
 
-store.on("error",()=>{
+store.on("error",(err)=>{
   console.log("ERRRO IN MONGO SESSION STORE ",err);
 });
 
@@ -92,7 +93,6 @@ const sessionOptions = {
 
 
 
-
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -103,7 +103,9 @@ passport.serializeUser(User.serializeUser()); //user se realted all info store
 passport.deserializeUser(User.deserializeUser());//user se realted all info remove
 
 
+
 app.use((req,res,next)=>{
+  console.log("Current logged in user:", req.user);
   res.locals.success = req.flash("success");
    res.locals.error = req.flash("error");
    res.locals.currUser = req.user;
@@ -142,6 +144,6 @@ app.use((err,req,res,next) =>{
 
 
 
-app.listen(8080,() => {
-    console.log("server is listening to port");
+app.listen(port, () => {
+  console.log(`Serving on port ${port}`);
 });

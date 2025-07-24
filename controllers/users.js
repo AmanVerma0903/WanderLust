@@ -1,4 +1,3 @@
-
 const User = require("../models/user.js");
 
 module.exports.renderSignupForm = (req,res)=>{
@@ -10,7 +9,7 @@ module.exports.renderLoginForm = (req,res)=>{
  res.render("users/login.ejs");
 }
 
-module.exports.signup = async (req,res)=>{
+module.exports.signup = async (req,res,next)=>{
   try{
      let {username, email, password} = req.body;
     
@@ -23,7 +22,7 @@ module.exports.signup = async (req,res)=>{
       }
        req.flash("success","Welcome to wanderlust!");
        res.redirect("/listings");
-     }) ; //automaticalay login kar deta hai after user sign up 
+     }); //automaticalay login kar deta hai after user sign up 
      
   } catch(e){
     req.flash("error",e.message);
