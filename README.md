@@ -2,6 +2,17 @@
 
 A full-stack web application built with Node.js, Express, and MongoDB that replicates the core functionality of Airbnb. Users can discover, list, and book unique accommodations around the world.
 
+
+## 🚀 Live Demo & Deployment
+
+**Experience WanderLust Live!**
+
+This full-stack application, encompassing both the frontend and backend, is seamlessly deployed on **Railway**.
+
+* **Live Application URL:** [https://honest-prosperity-production.up.railway.app](https://honest-prosperity-production.up.railway.app)
+
+---
+
 ## ✨ Features
 
 ### 🔐 Authentication & Authorization
