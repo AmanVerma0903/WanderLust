@@ -13,6 +13,17 @@ This full-stack application, encompassing both the frontend and backend, is seam
 
 ---
 
+## 🖼️ Landing Page Preview
+
+Here's a preview of the WanderLust landing page:
+
+![WanderLust Landing Page](https://github.com/AmanVerma0903/WanderLust/blob/2399909fcec6a8757937f852d7a6a55eafdd2236/wanderlust.png)
+
+---
+
+
+
+
 ## ✨ Features
 
 ### 🔐 Authentication & Authorization
