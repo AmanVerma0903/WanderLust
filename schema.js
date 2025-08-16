@@ -5,7 +5,10 @@ module.exports.listingSchema = Joi.object({
         description : Joi.string().required(),
         location :   Joi.string().required(),
         country : Joi.string().required(),
-        price : Joi.number().required().min(0),  //.min to prevent negative numbers
+        price : Joi.number().required().min(0).messages({
+            'number.base': 'Price must be a valid number',
+            'number.min': 'Price must be greater than or equal to 0'
+        }),  //.min to prevent negative numbers
         image: Joi.object({
       url: Joi.string().uri().required()
     }).required(),

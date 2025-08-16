@@ -4,7 +4,7 @@
     <div class="col-8 offset-2">
     <h1>Create a New Listing</h1>
     <br>
-    <form method="POST" action="/listings" novalidate  class="needs-validation" enctype="multipart/form-data"> <!--enctype for upload image-->
+    <form method="POST" action="/listings" novalidate class="needs-validation"> <!--enctype for upload image-->
         <div class="col-8">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -49,7 +49,7 @@
 
         <div class="mb-3 col-md-8">
             <label for="country" class="form-label">Country</label>
-            <input name="listing[country]" placeholder="India" type="text" class="form-control"required>
+            <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
             <div class="invalid-feedback">
       Enter a valid country
     </div>
@@ -66,7 +66,7 @@
 
        
        
-        <button class="btn btn-dark add-btn">Add</button>
+        <button class="btn btn-dark add-btn" type="submit">Add</button>
         <br /><br /> 
     </form>
     </div>

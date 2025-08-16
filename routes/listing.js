@@ -11,12 +11,14 @@ const listingController = require("../controllers/listings.js");
 
 router.route("/")
 .get(wrapAsync(listingController.index))
-.post(validateListing,isLoggedIn, wrapAsync(listingController.createListing)
+.post(validateListing, isLoggedIn, wrapAsync(listingController.createListing)
 );
 
 
 //NEW route
 router.get("/new", isLoggedIn, listingController.renderNewForm );
+
+
 
 
 router.route("/:id")

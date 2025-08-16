@@ -46,6 +46,17 @@ const listing = await Listing.findById(id)
 module.exports.createListing = (async (req,res ,next)=>{//async beacuse changes in database
      //first validate listing will be called as soon as /listing pe request ayegi 
     
+    // Add error handling for missing listing data
+    if (!req.body.listing) {
+        req.flash("error", "Listing data is missing!");
+        return res.redirect("/listings/new");
+    }
+    
+    // Convert price from string to number if it exists
+    if (req.body.listing.price) {
+      req.body.listing.price = Number(req.body.listing.price);
+    }
+    
     const newListing = new Listing (req.body.listing);
     newListing.owner =  req.user._id; //curr user ki id
     await newListing.save();
@@ -69,6 +80,11 @@ module.exports.renderEditForm = async (req,res) => {
 
  module.exports.updatesListings = async(req,res)=>{
   let {id}=req.params;
+
+    // Convert price from string to number if it exists
+    if (req.body.listing && req.body.listing.price) {
+      req.body.listing.price = Number(req.body.listing.price);
+    }
 
     await Listing.findByIdAndUpdate(id,{...req.body.listing}); //{...req.body.listing}java script ka object hai jisme sare parameters hai
     req.flash("success","Listing Updated!");

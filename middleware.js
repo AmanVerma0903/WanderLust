@@ -39,6 +39,11 @@ module.exports.isOwner = async(req,res,next) =>{
 
 //validate
 module.exports.validateListing = (req,res,next) => {
+  // Convert price from string to number if it exists
+  if (req.body.listing && req.body.listing.price) {
+    req.body.listing.price = Number(req.body.listing.price);
+  }
+  
   let { error } = listingSchema.validate(req.body);
      if(error){
       let errMsg = error.details.map((el) => el.message).join(","); //sare error ke details k club kar diye seprated by comma
