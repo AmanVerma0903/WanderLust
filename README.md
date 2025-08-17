@@ -6,9 +6,8 @@ A modern, full-stack travel booking application built with Node.js, Express, and
 
 **Experience WanderLust Live!**
 
-* **Live Application:** [https://wanderlust-nk04.onrender.com/listings](https://wanderlust-nk04.onrender.com/listings)
-* **Backend API:** [https://wanderlust-nk04.onrender.com](https://wanderlust-nk04.onrender.com)
-    * *Note: This is the base URL for the API. It serves data to the frontend application.*
+* **Live Application:** [https://wanderlust-nk04.onrender.com/listings](https://wanderlust-1-uoyq.onrender.com/listings)
+
 
 ---
 
