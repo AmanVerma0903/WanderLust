@@ -15,7 +15,7 @@ A modern, full-stack travel booking application built with Node.js, Express, and
 
 Here's a preview of the WanderLust travel booking platform:
 
-![WanderLust Landing Page](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=WanderLust+Travel+Platform)
+![WanderLust Landing Page](wanderlust.png)
 
 ---
 
