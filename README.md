@@ -284,9 +284,9 @@ NODE_ENV=production
 4. Test thoroughly
 5. Submit a pull request
 
-## 📝 License
+## 📝 Author
 
-This project is licensed under the ISC License.
+   Aman Verma
 
 ---
 
